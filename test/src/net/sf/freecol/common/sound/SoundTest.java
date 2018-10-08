@@ -63,20 +63,7 @@ public class SoundTest extends FreeColTestCase {
         soundPlayer = null;
     }
 
-    private void playSound(String id) {
-        File file = ResourceManager.getAudio(id);
-        assertNotNull("No sound resource: " + id, file);
-        try {
-            soundPlayer.playOnce(file);
-            try { // Just play the beginning of the sound to check it works
-                Thread.sleep(100);
-                soundPlayer.stop();
-                Thread.sleep(50);
-            } catch (InterruptedException e) {}
-        } catch (Exception e) {
-            fail("Could not play " + id + ": " + e.getMessage());
-        }
-    }
+    
 
   
 
